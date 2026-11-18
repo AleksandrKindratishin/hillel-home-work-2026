@@ -20,3 +20,42 @@
 //     let result = dollarCost * i;
 //     console.log(`${i}$ cost ${result} UAH`);
 // }
+
+
+// Дано ціле число N (ввести через prompt). Вивести всі цілі числа від 1 до 100, квадрат яких не перевищує числа N
+
+
+// let number = +prompt("Enter a number", '1 and >');
+//
+// for (let i = 1; i <= 100; i++) {
+//     if (i ** 2 <= number) {
+//         console.log(i);
+//     }
+// }
+
+
+
+// Дано ціле число (ввести через 'prompt'). З'ясувати, чи просто воно (простим називається число,
+// більше 1, що не має інших дільників, крім 1 і себе).
+
+
+
+let number = +prompt("Enter a number", '>1');
+let isPrime = true;
+
+if (number < 2) {
+    isPrime = false;
+} else {
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+            isPrime = false;
+            break;
+        }
+    }
+}
+
+if (isPrime) {
+    console.log(`${number} is prime`);
+} else {
+    console.log(`${number} is not prime`);
+}
